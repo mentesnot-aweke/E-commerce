@@ -25,7 +25,9 @@ const Sidebar = () => {
                   type="button "
                   onClick={() => {}}
                   className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
-                ></button>
+                >
+                  <MdOutlineCancel />{" "}
+                </button>
               </TooltipComponent>
             </div>
             <div className="mt-10 ">
@@ -52,7 +54,8 @@ const Sidebar = () => {
               ))}
             </div>
           </>
-        )}
+        )
+        }
       </div>
     </div>
   );
