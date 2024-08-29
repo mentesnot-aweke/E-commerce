@@ -5,8 +5,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CiSettings } from "react-icons/ci";
 import { useEffect } from "react";
+import {Button, Cart, ChartsHeader, Chat, Footer, Header, Navbar, Notification, Sidebar, ThemeSetting, UserProfile } from './components'
+import {Calendar, ColorPicker, Customers, Ecommerce, Editor, Employee,Kanban, Orders, Area, Bar, ColorMap, Financial, Line, Pie, Pyramid, Stacked} from './pages';
+
 function App() {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -25,10 +28,12 @@ function App() {
           {activeMenu ? (
             <div
               className=" w-72 fixed sidebar
-                 dark:bg-secondary-dark-bg
+                 dark:bg-secondary-dark-bg  
               bg-white"
             >
-              sideBar
+              <Sidebar />
+             
+              
             </div>
           ) : (
             <div className="w-0 dark:bg-secondary-dark-bg">sideBar </div>
@@ -39,32 +44,32 @@ function App() {
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-              Navbar
+              <Navbar />
             </div>
           </div>
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element="adasf a Ecommerce" />
-              <Route path="/ECommerce" element="afdaf dsf Ecommerce" />
+              <Route path="/" element={<Ecommerce/>} />
+              <Route path="/Ecommerce" element={ <Ecommerce/>}/>
               {/* pages */}
-              <Route path="/orders" element="afdaf dsf orders" />
-              <Route path="/employees" element="afdaf dsf employees" />
-              <Route path="/customers" element="afdaf dsf customers" />
+              <Route path="/orders" element={<Orders/>} />
+              <Route path="/employee" element={<Employee/>} />
+              <Route path="/customers" element={<Customers/>} />
               {/* Apps */}
-              <Route path="/kanban" element="afdaf dsf Kanban" />
-              <Route path="/editor" element="afdaf dsf Editor" />
-              <Route path="/calendar" element="afdaf dsf Calendar" />
-              <Route path="/color-picker" element="afdaf dsf Color-picker" />
+              <Route path="/kanban" element={<Kanban/>} />
+              <Route path="/editor" element={<Editor/>} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/colorPicker" element={<ColorPicker/>} />
               {/* Charts */}
-              <Route path="/line" element="afdaf dsf line" />
-              <Route path="/area" element="afdaf dsf area" />
-              <Route path="/bar" element="afdaf dsf bar" />
-              <Route path="/pie" element="afdaf dsf pie" />
-              <Route path="/financial" element="afdaf dsf financial" />
-              <Route path="/color-mapping" element="afdaf dsf color-mapping" />
-              <Route path="/pyramid" element="afdaf dsf pyramid" />
-              <Route path="/stacked" element="afdaf dsf Stacked" />
+              <Route path="/line" element={<Line/>} />
+              <Route path="/area" element={<Area/>} />
+              <Route path="/bar" element={<Bar/>} />
+              <Route path="/pie" element={<Pie/>} />
+              <Route path="/financial" element={<Financial/>} />
+              <Route path="/ColorMap" element={<ColorMap/>} />
+              <Route path="/pyramid" element={<Pyramid/>} />
+              <Route path="/stacked" element={<Stacked/>} />
             </Routes>
           </div>
         </div>
